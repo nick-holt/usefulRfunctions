@@ -6,3 +6,5 @@ name_clean <- function(df) {
         colnames(df) <- str_replace_all(tolower(colnames(df)), " ", "_")
         return(df)
 }
+
+'%!in%' <- function(x,y)!('%in%'(x,y))

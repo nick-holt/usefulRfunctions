@@ -7,4 +7,5 @@ name_clean <- function(df) {
         return(df)
 }
 
+# function that is opposite of %in%
 '%!in%' <- function(x,y)!('%in%'(x,y))

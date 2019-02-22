@@ -1,5 +1,5 @@
 # usefulRfunctions
-Library of useful R functions that I source/use constantly
+Library of useful R functions I've written to speed up routine tasks. I source/use these constantly.
 
 ## To load as a library in an R script use:
 

@@ -6,6 +6,7 @@ Library of useful R functions that I source/use constantly
 ```r {source script}
 source(url("https://raw.githubusercontent.com/nick-holt/usefulRfunctions/master/useful%20functions.R"))
 ```
+Maybe one day I'll package this, but for now I source from github.
 
 ## name_clean()
 Pipeable function that standardizes variable names for a data frame

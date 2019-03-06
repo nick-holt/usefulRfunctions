@@ -4,6 +4,7 @@ library(stringr)
 name_clean <- function(df) {
         colnames(df) <- str_remove_all(tolower(colnames(df)), "[[:punct:]]")
         colnames(df) <- str_replace_all(tolower(colnames(df)), " ", "_")
+        colnames(df) <- str_replace_all(colnames(df), "__", "_")
         return(df)
 }
 

@@ -32,3 +32,49 @@ crossTilePlot <- function(x, y) {
                 theme(axis.title = element_text(face="bold", size=11)) 
         
 }
+
+# return start date for previous quarter based on date input
+prev_quarter_start_date <- function(date = today()){
+        
+        # if we are in q2 return start of q1
+        if(quarter(date) - 1 == 1){
+                start <- ymd(str_c(year(date), "-01-01"))
+                # if q3, return q2 start
+        } else if(quarter(date) - 1 == 2) {
+                start <- ymd(str_c(year(date), "-04-01"))
+                # if q4, return q3 start
+        } else if(quarter(date) - 1 == 3) {
+                start <- ymd(str_c(year(date), "-07-01"))
+                # if q1, return q4 start
+        } else if(quarter(date) - 1 == 0) {
+                start <- ymd(str_c(year(date)-1, "-10-01"))
+        } else {
+                start <- "DATE UNKNOWN ERROR"
+        }
+        
+        return(start)
+        
+}
+
+# return end date for previous quarter based on date input
+prev_quarter_end_date <- function(date = today()){
+        
+        # if we are in q2 return end of q1
+        if(quarter(date) - 1 == 1){
+                end <- ymd(str_c(year(date), "-03-31"))
+        # if q3, return q2 end
+        } else if(quarter(date) - 1 == 2) {
+                end <- ymd(str_c(year(date), "-06-30"))
+        # if q4, return q3 end
+        } else if(quarter(date) - 1 == 3) {
+                end <- ymd(str_c(year(date), "-09-30"))
+        # if q1, return q4 end
+        } else if(quarter(date) - 1 == 0) {
+                end <- ymd(str_c(year(date)-1, "-12-31"))
+        } else {
+                end <- "DATE UNKNOWN ERROR"
+        }
+        
+        return(end)
+        
+}

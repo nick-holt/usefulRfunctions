@@ -25,3 +25,18 @@ The opposite of %in%, meaning it will keep all of the elements of one vector tha
     filter(cyl %!in% c(4, 6))
 ```    
     
+## prev_quarter_start_date()
+
+Calculates the start date of the previous quarter based on a given date input. Default date is current date.
+
+```r {prev_q_start example}
+  prev_quarter_start_date("2019-01-01")
+```    
+
+## prev_quarter_end_date()
+
+Calculates the end date of the previous quarter based on a given date input. Default date is current date.
+
+```r {prev_q_end example}
+  prev_quarter_end_date("2019-01-01")
+```    

@@ -1,5 +1,6 @@
 # function that takes a data frame object and standardizes the column names
 library(stringr)
+library(lubridate)
 
 name_clean <- function(df) {
         colnames(df) <- str_remove_all(tolower(colnames(df)), "[[:punct:]]")

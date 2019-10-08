@@ -79,3 +79,23 @@ prev_quarter_end_date <- function(date = today()){
         return(end)
         
 }
+
+is.nan.data.frame <- function(x){
+        do.call(cbind, lapply(x, is.nan))
+}
+
+# remove NaN's from a df and replace with specified value
+remove_nan <- function(df, replacement_value = 0){
+        
+                df[is.nan.data.frame(df)] <- replacement_value
+        return(df)
+        
+}
+
+# remove NA's from df and replace with specified value
+remove_na <- function(df, replacement_value = 0){
+        
+                df[is.na(df)] <- replacement_value
+        return(df)
+        
+}

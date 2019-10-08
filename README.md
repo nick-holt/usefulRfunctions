@@ -40,3 +40,27 @@ Calculates the end date of the previous quarter based on a given date input. Def
 ```r {prev_q_end example}
   prev_quarter_end_date("2019-01-01")
 ```    
+
+## remove_na()
+
+Replaces all NAs in a data frame with a specified value (or default value of 0)
+
+```r {remove_na example}
+  test_df <- data.frame(a = c(1,2,3,4,NA), b = c(NA, 3, 4, 5, 6))
+  test_df
+  
+  test_df %>%
+      remove_na()
+```
+
+## remove_nan()
+
+Replaces all NaNs in a data frame with a specified value (or default value of 0)
+
+```r {remove_na example}
+  test_df <- data.frame(a = c(1,2,3,4,NaN), b = c(NaN, 3, 4, 5, 6))
+  test_df
+  
+  test_df %>%
+      remove_nan()
+```

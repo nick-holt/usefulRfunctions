@@ -57,10 +57,22 @@ Replaces all NAs in a data frame with a specified value (or default value of 0)
 
 Replaces all NaNs in a data frame with a specified value (or default value of 0)
 
-```r {remove_na example}
+```r {remove_nan example}
   test_df <- data.frame(a = c(1,2,3,4,NaN), b = c(NaN, 3, 4, 5, 6))
   test_df
   
   test_df %>%
       remove_nan()
+```
+
+## remove_inf()
+
+Replaces all Infs in a data frame with a specified value (or default value of 0)
+
+```r {remove_inf example}
+  test_df <- data.frame(a = c(1,2,3,4,Inf), b = c(Inf, 3, 4, 5, 6))
+  test_df
+  
+  test_df %>%
+      remove_inf()
 ```

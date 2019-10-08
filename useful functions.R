@@ -80,14 +80,14 @@ prev_quarter_end_date <- function(date = today()){
         
 }
 
-is.nan.data.frame <- function(x){
+is_nan <- function(x){
         do.call(cbind, lapply(x, is.nan))
 }
 
 # remove NaN's from a df and replace with specified value
 remove_nan <- function(df, replacement_value = 0){
         
-                df[is.nan.data.frame(df)] <- replacement_value
+                df[is_nan(df)] <- replacement_value
         return(df)
         
 }
@@ -96,6 +96,19 @@ remove_nan <- function(df, replacement_value = 0){
 remove_na <- function(df, replacement_value = 0){
         
                 df[is.na(df)] <- replacement_value
+        return(df)
+        
+}
+
+# function for performing is.infinite over a df        
+is_infinite <- function(x){
+        do.call(cbind, lapply(x, is.infinite))
+}
+
+# remove Inf's from a df and replace with specified value        
+remove_infinite <- function(df, replacement_value = 0){
+        
+        df[is_infinite(df)] <- replacement_value
         return(df)
         
 }

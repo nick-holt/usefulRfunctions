@@ -106,7 +106,7 @@ is_infinite <- function(x){
 }
 
 # remove Inf's from a df and replace with specified value        
-remove_infinite <- function(df, replacement_value = 0){
+remove_inf <- function(df, replacement_value = 0){
         
         df[is_infinite(df)] <- replacement_value
         return(df)
